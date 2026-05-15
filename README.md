@@ -13,9 +13,7 @@ Production-ready starter website for Chart4Traders (C4T), a branded marketing an
 
 ## Editing Products
 
-Products can now be managed in Sanity CMS once `NEXT_PUBLIC_SANITY_PROJECT_ID` is configured.
-
-Until Sanity is connected, the website safely falls back to `data/products.ts`.
+Products are currently managed directly in `data/products.ts`.
 
 Each product supports:
 
@@ -40,9 +38,7 @@ Each product supports:
 
 ## Replacing Payhip Links
 
-In Sanity, paste the real Payhip product page URL into the product's `Payhip product URL` field.
-
-If using the local fallback data, replace each placeholder `payhipUrl` in `data/products.ts`.
+Replace each placeholder `payhipUrl` in `data/products.ts`.
 
 This site does not include checkout, cart, payment forms, Stripe, accounts, or subscriptions. All purchase buttons link externally to Payhip for checkout, VAT handling where applicable, file delivery, and download access.
 
@@ -77,48 +73,20 @@ npm run dev
 npm run build
 ```
 
-## Sanity CMS
+## Site Settings
 
-The admin panel is embedded at:
-
-```text
-/studio
-```
-
-To connect it:
-
-1. Create a free Sanity project.
-2. Copy `.env.example` to `.env.local`.
-3. Add your Sanity project ID:
+Site-wide settings such as support email, chat text, setup-support price, and booking links are managed in:
 
 ```text
-NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
-NEXT_PUBLIC_SANITY_DATASET=production
-NEXT_PUBLIC_SANITY_API_VERSION=2025-01-01
+data/siteSettings.ts
 ```
 
-4. Start the site:
-
-```bash
-npm run dev
-```
-
-5. Open:
-
-```text
-http://localhost:3000/studio
-```
-
-The Studio has document types for:
-
-- Products
-- Guides / Articles
-
-Payhip remains the checkout, VAT, and delivery layer.
+The `/studio` route now acts as a simple note page explaining the local-data workflow.
 
 ## Assumptions
 
 - English is the only complete live content language for now.
 - Product screenshots are represented by polished placeholders until real Sierra Chart screenshots are available.
 - Payhip remains the payment, VAT, and delivery layer.
+- Products are intentionally managed in local files for now so important product pages can stay custom.
 - The website is informational and educational, not financial advice.

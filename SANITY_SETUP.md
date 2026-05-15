@@ -1,78 +1,19 @@
-# Sanity CMS Setup for C4T
+# Local Content Workflow for C4T
 
-Sanity is the product admin area for Chart4Traders.
+Chart4Traders is currently set up to run without Sanity.
 
 Payhip still handles checkout, VAT, file delivery, and downloads.
 
-## What You Will Manage in Sanity
+## Where Content Lives
 
-- Products
-- Product images
-- Product prices
-- Payhip product links
-- Included files
-- Compatibility notes
-- Product FAQ
-- Guides / articles
+- Products: `data/products.ts`
+- Site settings: `data/siteSettings.ts`
+- Guides / articles: `data/guides.ts`
 
-## One-Time Setup
+## Why This Setup
 
-1. Create a free Sanity account.
-2. Create a new Sanity project.
-3. Use the dataset name:
+This keeps the project simpler while the catalog is still small and product pages need different structures, images, and explanations.
 
-```text
-production
-```
+## If You Add Sanity Later
 
-4. Copy `.env.example` to `.env.local`.
-5. Add your project ID:
-
-```text
-NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
-NEXT_PUBLIC_SANITY_DATASET=production
-NEXT_PUBLIC_SANITY_API_VERSION=2025-01-01
-```
-
-6. Run the site:
-
-```bash
-npm run dev
-```
-
-7. Open the admin area:
-
-```text
-http://localhost:3000/studio
-```
-
-## Adding a Product
-
-In Sanity Studio:
-
-1. Click `Product`.
-2. Click `Create new`.
-3. Fill in:
-   - Title
-   - Slug
-   - Price, for example `USD 49.00`
-   - Payhip product URL
-   - Short description
-   - Full description
-   - Main product image
-   - Gallery images
-   - Included files
-   - Compatibility
-   - FAQ
-4. Set `Show on homepage` if you want it in Featured Templates.
-5. Click `Publish`.
-
-The website will read Sanity products once the Sanity project ID is configured.
-
-## Important
-
-If Sanity is not configured, the website uses the local fallback products in:
-
-```text
-data/products.ts
-```
+The existing Sanity files have been left in the repo as references for a future migration, but the live site no longer depends on them.
