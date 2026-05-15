@@ -233,7 +233,7 @@ export default async function SetupSupportPage({ params }: { params: Promise<{ l
               </ButtonLink>
             ) : (
               <p className="mt-5 text-[11px] leading-5 text-steel">
-                Add your booking calendar URL in Sanity to activate the direct scheduling button.
+                The booking calendar button will appear here once session availability is published.
               </p>
             )}
           </div>
