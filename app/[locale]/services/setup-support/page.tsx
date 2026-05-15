@@ -46,7 +46,7 @@ const outcomes = [
 const steps = [
   "Purchase service",
   "Receive confirmation",
-  "Book session",
+  "Session time arranged",
   "Live screen-sharing setup"
 ];
 
@@ -205,7 +205,7 @@ export default async function SetupSupportPage({ params }: { params: Promise<{ l
       <Section
         eyebrow="Scheduling"
         title="Choose a time without email back and forth"
-        intro="Use an online calendar with active availability instead of agreeing times manually."
+        intro="When online booking is live, clients will be able to choose an available session time directly."
       >
         <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-[1.05fr_0.95fr]" id="scheduling">
           <div className="border-t border-line py-4">
@@ -233,7 +233,7 @@ export default async function SetupSupportPage({ params }: { params: Promise<{ l
               </ButtonLink>
             ) : (
               <p className="mt-5 text-[11px] leading-5 text-steel">
-                The booking calendar button will appear here once session availability is published.
+                Session availability will be published here once online booking is open.
               </p>
             )}
           </div>
